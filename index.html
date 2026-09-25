@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Special Day — Dharshini</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:#070916;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.stage{position:relative;width:100%;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#070916;overflow:hidden}
+.hero{display:block;width:100%;height:auto;max-height:100vh;object-fit:contain;user-select:none}
+.surprise{position:absolute;left:69.5%;top:79.0%;width:25.5%;height:7.2%;border:0;border-radius:999px;background:transparent;cursor:pointer}
+.surprise:focus{outline:2px solid white;outline-offset:4px}
+.hint{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);font-size:11px;color:#ffffffaa;letter-spacing:1px}
+.overlay{position:fixed;inset:0;background:radial-gradient(circle at 50% 45%,#ff8dbb33,transparent 25%),#050611;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.7s;z-index:5}
+.overlay.show{opacity:1;visibility:visible}
+.modal{width:min(90vw,520px);padding:38px 25px;text-align:center;border:1px solid #ffffff22;border-radius:28px;background:#ffffff0c;backdrop-filter:blur(18px);box-shadow:0 25px 80px #0009;color:white;transform:translateY(20px) scale(.96);transition:.7s}
+.overlay.show .modal{transform:none}
+.photo{width:min(70vw,300px);aspect-ratio:3/4;object-fit:cover;border-radius:22px;margin:0 auto 20px;box-shadow:0 0 50px #ff78ae55}
+h1{font-size:clamp(2rem,8vw,3.5rem);margin:8px 0;background:linear-gradient(90deg,#fff,#ff9fc9,#b8b8ff);-webkit-background-clip:text;color:transparent}
+p{line-height:1.7;color:#e8e9f7}
+.close{margin-top:14px;border:0;border-radius:999px;padding:12px 22px;font-weight:800;cursor:pointer}
+.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:8}.piece{position:absolute;top:-20px;font-size:20px;animation:fall 3s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@media(max-width:600px){
+ .stage{align-items:flex-start}.hero{width:100%;height:auto;min-height:100vh;object-fit:cover;object-position:center top}
+ .surprise{left:68%;top:78.5%;width:28%;height:8%}
+ .hint{display:none}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+  <img class="hero" src="birthday-hero.png" alt="Dharshini birthday greeting">
+  <button class="surprise" aria-label="Send you a little surprise" onclick="openSurprise()"></button>
+  <div class="hint">Tap the pink button for the surprise ✨</div>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div style="font-size:44px">✨🎂✨</div>
+    <h1>One Little Surprise</h1>
+    <p>
+      Dharshini, just wanted to make your birthday a little more special. 😊<br><br>
+      Have an amazing birthday!<br>
+      Stay happy, keep smiling & enjoy your day! 💫
+    </p>
+    <button class="close" onclick="closeSurprise()">Back to the birthday page</button>
+  </div>
+</div>
+<div class="confetti" id="confetti"></div>
+
+<script>
+function openSurprise(){
+ document.getElementById('overlay').classList.add('show');
+ const box=document.getElementById('confetti');
+ for(let i=0;i<80;i++){
+   const p=document.createElement('span');
+   p.className='piece';
+   p.textContent=['✨','💫','🎉','🌸','🎈','⭐'][Math.floor(Math.random()*6)];
+   p.style.left=Math.random()*100+'vw';
+   p.style.animationDelay=Math.random()*1.1+'s';
+   box.appendChild(p);
+ }
+ setTimeout(()=>box.innerHTML='',4500);
+}
+function closeSurprise(){document.getElementById('overlay').classList.remove('show')}
+</script>
+</body>
+</html>
