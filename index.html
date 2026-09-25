@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Birthday.exe — Dharshini 🎂</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#070916;color:#fff;font-family:system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
+.bg{position:fixed;inset:0;background:radial-gradient(circle at 50% 35%,#ff7aaa30,transparent 35%),radial-gradient(circle at 20% 80%,#6f7cff25,transparent 40%);z-index:-2}.stars{position:fixed;inset:0;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:42px 42px;opacity:.16;animation:stars 18s linear infinite;z-index:-1}@keyframes stars{to{background-position:84px 84px}}
+.wrap{min-height:100vh;display:grid;place-items:center;padding:22px}.card{width:min(94vw,560px);min-height:620px;padding:30px 22px;border:1px solid #ffffff20;border-radius:30px;background:#ffffff0b;backdrop-filter:blur(15px);box-shadow:0 25px 90px #0009;text-align:center;position:relative;overflow:hidden}
+.screen{display:none}.screen.active{display:block;animation:in .65s ease}@keyframes in{from{opacity:0;transform:translateY(25px) scale(.98)}to{opacity:1;transform:none}}
+.kicker{letter-spacing:3px;color:#b7bedc;font-size:.78rem}.title{font-size:clamp(2rem,9vw,4rem);line-height:1.05;margin:18px 0}.gradient{background:linear-gradient(90deg,#fff,#ff9fc9,#b4b8ff);-webkit-background-clip:text;color:transparent}
+button{border:0;border-radius:999px;padding:14px 24px;background:#fff;color:#11152b;font-weight:800;font-size:1rem;cursor:pointer;margin-top:18px;box-shadow:0 12px 30px #0006}button:active{transform:scale(.97)}
+.bar{height:9px;background:#ffffff15;border-radius:9px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#ff75a9,#9f9cff);transition:width 1.3s}.emoji{font-size:4rem;animation:bounce 1.5s infinite}@keyframes bounce{50%{transform:translateY(-9px)}}
+.photoFrame{margin:18px auto 12px;width:min(82vw,390px);height:430px;border-radius:25px;overflow:hidden;border:1px solid #ffffff30;box-shadow:0 0 0 1px #ff9dc633,0 0 45px #ff5c9b44;position:relative}
+.photoFrame:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 35%,#fff4 50%,transparent 65%);transform:translateX(-130%);animation:shine 3.5s ease-in-out infinite}@keyframes shine{55%,100%{transform:translateX(130%)}}
+.photoFrame img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:saturate(1.04) contrast(1.03);animation:photoIn 1.5s ease both}@keyframes photoIn{from{transform:scale(1.12);filter:blur(8px) brightness(.5)}to{transform:scale(1);filter:none}}
+.caption{font-size:1rem;color:#dce0f5}.stats{text-align:left;margin:22px 0}.stat{margin:14px 0}.stat b{float:right}.meter{height:8px;background:#ffffff15;border-radius:9px;overflow:hidden}.meter i{display:block;width:100%;height:100%;background:linear-gradient(90deg,#ff75a9,#ffd37b);border-radius:9px}
+.final{font-size:1.08rem;line-height:1.75;color:#e7e9f7}.heart{font-size:2rem;animation:pulse 1.1s infinite}@keyframes pulse{50%{transform:scale(1.18)}}#confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden}.piece{position:absolute;top:-25px;font-size:20px;animation:fall 3s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+</style>
+</head>
+<body><div class="bg"></div><div class="stars"></div><div id="confetti"></div>
+<div class="wrap"><main class="card">
+
+<section class="screen active" id="s1">
+<div class="kicker">BIRTHDAY.EXE</div><div class="emoji">🎂</div>
+<h1 class="title gradient">Loading something special...</h1>
+<div class="bar"><div class="fill" id="load"></div></div><p id="loadtxt" class="kicker">Initializing birthday mode...</p>
+</section>
+
+<section class="screen" id="s2">
+<div class="kicker">SYSTEM MESSAGE ✨</div><h1 class="title">Hey <span class="gradient">Dharshini</span> 👀</h1>
+<p>Someone told me today is a pretty special day...</p><button onclick="go(3)">Check why →</button>
+</section>
+
+<section class="screen" id="s3">
+<div class="emoji">🎉</div><h1 class="title gradient">HAPPY BIRTHDAY!</h1><h2>Dharshini 🎂</h2>
+<p>Hope your day is filled with good vibes, big smiles & lots of cake! ✨</p><button onclick="go(4)">Birthday Stats 📊</button>
+</section>
+
+<section class="screen" id="s4">
+<div class="kicker">TODAY'S BIRTHDAY STATS</div><div class="stats">
+<div class="stat">Happiness <b>100%</b><div class="meter"><i></i></div></div>
+<div class="stat">Smile <b>100%</b><div class="meter"><i></i></div></div>
+<div class="stat">Cake requirement <b>200%</b><div class="meter"><i></i></div></div>
+<div class="stat">Awesomeness <b>∞%</b><div class="meter"><i></i></div></div></div>
+<button onclick="go(5)">One more thing →</button>
+</section>
+
+<section class="screen" id="s5">
+<div class="kicker">WAIT... THERE'S ONE MORE THING 👀</div>
+<h1 class="title">Don't click this.</h1><p>Seriously. There's absolutely nothing here. 😌</p>
+<button onclick="go(6)">DON'T CLICK 👀</button>
+</section>
+
+<section class="screen" id="s6">
+<div class="kicker">SPECIAL REVEAL ✨</div>
+<div class="photoFrame"><img src="dharshini.jpg" alt="Dharshini"></div>
+<div class="heart">✨</div><p class="caption">Okay... maybe there was one more thing. 😄</p>
+<button onclick="go(7)">Final message →</button>
+</section>
+
+<section class="screen" id="s7">
+<div class="emoji">🎁</div><h1 class="title gradient">Okay, okay... 😂</h1>
+<p class="final">Just wanted to be one of the people who makes your birthday a little more special. 😊<br><br>
+Have an amazing birthday, Dharshini! 🎂✨<br>
+Stay happy, keep smiling & enjoy your day! 💫</p>
+</section>
+
+</main></div>
+<script>
+function go(n){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById('s'+n).classList.add('active');if(n===6)confetti()}
+setTimeout(()=>{document.getElementById('load').style.width='100%';document.getElementById('loadtxt').textContent='Birthday mode ready ✨'},350)
+setTimeout(()=>go(2),1900)
+function confetti(){let box=document.getElementById('confetti');for(let i=0;i<70;i++){let p=document.createElement('span');p.className='piece';p.textContent=['✨','💫','🎉','🌸','🎈','⭐'][Math.floor(Math.random()*6)];p.style.left=Math.random()*100+'vw';p.style.animationDelay=Math.random()*1.3+'s';box.appendChild(p)}setTimeout(()=>box.innerHTML='',4500)}
+</script></body></html>
